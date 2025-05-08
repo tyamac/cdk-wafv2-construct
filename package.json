@@ -29,6 +29,7 @@
     "constructs": "^10.4.2"
   },
   "devDependencies": {
+    "standard-version": "^9.5.0",
     "typescript": "^5.8.3"
   }
 }
