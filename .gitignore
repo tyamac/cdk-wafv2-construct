@@ -1,0 +1,18 @@
+# Node.js
+node_modules/
+
+# JetBrains IDE
+.idea/
+
+# TypeScript build output
+dist/
+
+# npm package tarballs
+*.tgz
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db

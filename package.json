@@ -1,0 +1,34 @@
+{
+  "name": "@tyamac/cdk-wafv2-construct",
+  "version": "0.1.0",
+  "description": "Reusable AWS WAFv2 L2 construct for AWS CDK (TypeScript)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "aws",
+    "cdk",
+    "construct",
+    "waf",
+    "wafv2",
+    "typescript"
+  ],
+  "author": "tyamac",
+  "license": "MIT",
+  "type": "commonjs",
+  "volta": {
+    "node": "22.15.0",
+    "npm": "11.3.0"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.195.0",
+    "constructs": "^10.4.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
