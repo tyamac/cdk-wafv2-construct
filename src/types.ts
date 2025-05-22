@@ -1,6 +1,7 @@
 import {
   aws_wafv2 as wafv2,
   aws_logs as logs,
+  CfnTag
 } from "aws-cdk-lib";
 import { AwsManagedRuleGroup } from "./managed-rule-names.enum";
 
@@ -164,4 +165,37 @@ export interface AwsManagedRuleProps {
    * version: '1.1'
    */
   version?: string;
+}
+
+
+enum IpVersion {
+  IPV4 = 'IPV4',
+  IPV6 = 'IPV6',
+}
+
+/**
+ * IpSetPropsはIpSetConstructのパラメータとして使用されるプロパティを定義します。
+ */
+export interface IpSetProps {
+  scope?: 'REGIONAL' | 'CLOUDFRONT';
+  addresses: string[];
+  ipAddressVersion?: IpVersion;
+  name?: string;
+  description?: string;
+  tags?: CfnTag
+}
+
+export interface IpSetForwardedIPConfigurationProps { //extends wafv2.CfnWebACL.IPSetForwardedIPConfigurationProperty {
+  headerName: string;
+  fallbackBehavior: 'MATCH' | 'NO_MATCH';
+  position: 'FIRST' | 'LAST' | 'ANY';
+}
+
+export interface UserManagedRuleProps {
+  priority: number;
+  ruleName: string;
+  statement: wafv2.CfnWebACL.StatementProperty;
+  action?: wafv2.CfnWebACL.RuleActionProperty;
+  overrideAction?: wafv2.CfnWebACL.OverrideActionProperty;
+  visibilityConfig?: wafv2.CfnWebACL.VisibilityConfigProperty;
 }
